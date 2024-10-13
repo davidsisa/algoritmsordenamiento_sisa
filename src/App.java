@@ -51,12 +51,12 @@ public class App {
                 alternar = leer.nextInt();
                     if (alternar == 1){
                         cambio = true;
-                        int[] arrayOrd = ordenar.burbujaOrdenamiento(array, cambio);
+                        int[] arrayOrd = ordenar.seleccionOrdenamiento(array, cambio);
                         System.out.println("- Array Ordenado por metodo Burbuja es: " + Arrays.toString(arrayOrd));
                         
                     } else {
                         cambio = false;
-                        int[] arrayOrd = ordenar.burbujaOrdenamiento(array, cambio);
+                        int[] arrayOrd = ordenar.seleccionOrdenamiento(array, cambio);
 
                     }
                     break;
@@ -84,14 +84,28 @@ public class App {
                 alternar = leer.nextInt();
                     if (alternar == 1){
                         cambio = true;
-                        int[] arrayOrd = ordenar.insercionOrdenamiento(array, cambio);
-                        System.out.println("- Array Ordenado por metodo Burbuja es: " + Arrays.toString(arrayOrd));
-                        
+                        System.out.println("Quiere imprimir el metodo con isntrucciones: "); 
+                        System.out.println("1. No                                    2.Si"); 
+                        alternar = leer.nextInt();
+                            if (alternar == 1){
+                                int[] arrayOrd = ordenar.insercionOrdenamiento(array, cambio);
+                                System.out.println("- Array Ordenado por metodo Burbuja es: " + Arrays.toString(arrayOrd));
+                            } else {
+                                int[] arrayOrd = ordenar.insercionOrdenamientoInstrucciones(array, cambio);
+                                System.out.println("- Array Ordenado por metodo Burbuja es: " + Arrays.toString(arrayOrd));
+                            }                                            
                     } else {
                         cambio = false;
-                        int[] arrayOrd = ordenar.insercionOrdenamiento(array, cambio);
-                        System.out.println("- Array Ordenado por metodo Burbuja es: " + Arrays.toString(arrayOrd));
-
+                        System.out.println("Quiere imprimir el metodo con isntrucciones: "); 
+                        System.out.println("1. No                                    2.Si"); 
+                        alternar = leer.nextInt();
+                            if (alternar == 1){
+                                int[] arrayOrd = ordenar.insercionOrdenamiento(array, cambio);
+                                System.out.println("- Array Ordenado por metodo Burbuja es: " + Arrays.toString(arrayOrd));
+                            } else {
+                                int[] arrayOrd = ordenar.insercionOrdenamientoInstrucciones(array, cambio);
+                                System.out.println("- Array Ordenado por metodo Burbuja es: " + Arrays.toString(arrayOrd));
+                            } 
                     }
                     break;
             default:

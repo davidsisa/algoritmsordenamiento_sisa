@@ -91,6 +91,43 @@ public class MetodosOrdenamiento {
 
         }
     }
+    //Insercion con instrucciones
+    public int[] insercionOrdenamientoInstrucciones(int[] array, boolean cambio) {
+
+        int[] arregloOrdenado = Arrays.copyOf(array, array.length);
+        if (cambio == true){
+            for (int j = 1; j < arregloOrdenado.length; j++) {
+                System.out.println("REPASO DE NUMERO " + j);
+                int key = arregloOrdenado[j];
+                int i = j - 1;
+                System.out.println("\ti=" + i + " j=" + j + " [i]=" + array[i] + " [j]=" + array[j]);
+                while (i >= 0 && arregloOrdenado[i] > key) {
+                    System.out.println("\t\tComparamos " + key + " con " + array[j]);
+                    arregloOrdenado[i + 1] = arregloOrdenado[i];
+                    i--;
+                    System.out.println("\t\t--------" + Arrays.toString(array));
+                }
+                System.out.println("\t--------" + Arrays.toString(array));
+                arregloOrdenado[i + 1] = key;
+            }
+            return arregloOrdenado;
+        
+        } else {
+            for (int j = 1; j < arregloOrdenado.length; j++) {
+                int key = arregloOrdenado[j];
+                int i = j - 1;
+                while (i >= 0 && arregloOrdenado[i] <  key) {
+                    arregloOrdenado[i + 1] = arregloOrdenado[i];
+    
+                    i--;
+                }
+                arregloOrdenado[i + 1] = key;
+            }
+            return arregloOrdenado;
+
+        }
+    }
+    
 } 
             
         
