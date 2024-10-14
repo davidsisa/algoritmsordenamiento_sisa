@@ -27,6 +27,7 @@ public class MetodosOrdenamiento {
         } 
 
     }
+
     public int[] seleccionOrdenamiento(int[] array, boolean cambio) {
         int[] arregloOrdenado = Arrays.copyOf(array, array.length);
         if (cambio == true){
@@ -93,7 +94,6 @@ public class MetodosOrdenamiento {
     }
     //Insercion con instrucciones
     public int[] insercionOrdenamientoInstrucciones(int[] array, boolean cambio) {
-
         int[] arregloOrdenado = Arrays.copyOf(array, array.length);
         if (cambio == true){
             for (int j = 1; j < arregloOrdenado.length; j++) {
@@ -127,6 +127,77 @@ public class MetodosOrdenamiento {
 
         }
     }
+    public int[] seleccionOrdenamientoInstrucciones(int[] array, boolean cambio){
+        int[] arregloOrdenado = Arrays.copyOf(array, array.length);
+        if (cambio == true){
+            for (int i = 0; i < arregloOrdenado.length - 1; i++) {
+                int indice = i;
+                System.out.println("Iteración " + i + ":");
+                for (int j = i + 1; j < arregloOrdenado.length; j++) {
+                    System.out.println("\tComparando " + arregloOrdenado[j] + " con " + arregloOrdenado[indice]);
+                    if (arregloOrdenado[j] < arregloOrdenado[indice]) {
+                        indice = j;
+                    }
+                }
+                int pequeno = arregloOrdenado[indice];
+                arregloOrdenado[indice] = arregloOrdenado[i];
+                arregloOrdenado[i] = pequeno;
+                System.out.println("\tArreglo después del intercambio: " + Arrays.toString(arregloOrdenado));
+            }
+            return arregloOrdenado;
+        } else {
+            for (int i = 0; i < arregloOrdenado.length - 1; i++) {
+                int indice = i;
+                System.out.println("Iteración " + i + ":");
+                for (int j = i + 1; j < arregloOrdenado.length; j++) {
+                    System.out.println("\tComparando " + arregloOrdenado[j] + " con " + arregloOrdenado[indice]);
+                    if (arregloOrdenado[j] > arregloOrdenado[indice]) {
+                        indice = j;
+                    }
+                }
+    
+                int pequeno = arregloOrdenado[indice];
+                arregloOrdenado[indice] = arregloOrdenado[i];
+                arregloOrdenado[i] = pequeno;
+                System.out.println("\tArreglo después del intercambio: " + Arrays.toString(arregloOrdenado));
+            }
+            return arregloOrdenado;
+        }
+    }
+    public int[] burbujaOrdenamientoInstrucciones(int[] array , boolean cambio){
+        int[] arregloOrdenado = Arrays.copyOf(array, array.length);
+        if (cambio == true){
+            for(int i = 0; i < arregloOrdenado.length;i++){
+                System.out.println("Iteración " + i + ":");
+                for(int j =  i + 1; j < arregloOrdenado.length;j++) {
+                    if (arregloOrdenado[i] > arregloOrdenado[j]) {
+                        int aux = arregloOrdenado[i];
+                        arregloOrdenado[i] = arregloOrdenado[j];
+                        arregloOrdenado[j] = aux;
+                        System.out.println("\tComparando " + arregloOrdenado[j] + " con " + arregloOrdenado[i]);
+                    }
+                    System.out.println("\tArreglo después del intercambio: " + Arrays.toString(arregloOrdenado)); 
+                }   
+            }
+            return arregloOrdenado;    
+        }else {
+            for(int i = 0; i < arregloOrdenado.length;i++){
+                System.out.println("Iteración " + i + ":");
+                for(int j =  i + 1; j < arregloOrdenado.length;j++) {
+                    if (arregloOrdenado[i] < arregloOrdenado[j]) {
+                        int aux = arregloOrdenado[i];
+                        arregloOrdenado[i] = arregloOrdenado[j];
+                        arregloOrdenado[j] = aux;
+                        System.out.println("\tComparando " + arregloOrdenado[j] + " con " + arregloOrdenado[i]);
+                    }
+                    System.out.println("\tArreglo después del intercambio: " + Arrays.toString(arregloOrdenado));
+                }   
+            }
+            return arregloOrdenado;
+        } 
+
+    }
+
     
 } 
             
